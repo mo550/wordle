@@ -1,0 +1,125 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+:root {
+  --green: #6aaa64;
+  --gray: #86888a;
+  --lightGray: #d8d8d8;
+  --darkGray: #939598;
+}
+
+/* Start Header & Footer */
+.header,
+.footer {
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--lightGray);
+  padding: 10px;
+}
+.footer {
+  font-size: 20px;
+  text-align: center;
+  border-top: 1px solid var(--lightGray);
+  border-bottom: 0;
+}
+@media (max-width: 767px) {
+  .footer {
+    font-size: 16px;
+  }
+}
+/* End Header & Footer */
+
+/* Start Content */
+.content {
+  color: #666;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 50px;
+  padding: 25px 10px;
+}
+.content span {
+  color: var(--green);
+  font-weight: 500;
+}
+/* End Content */
+
+/* Start Main */
+.wordle-game-blocks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 50px auto;
+}
+.game-block {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  border: 3px solid var(--lightGray);
+  margin: 20px;
+}
+.game-block .front {
+  font-size: 15px;
+  background-color: var(--gray);
+}
+.game-block .back {
+  font-size: 55px;
+  background-color: var(--green);
+  transform: rotateY(180deg);
+}
+.game-block .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #FFF;
+  text-align: center;
+  line-height: 144px;
+  backface-visibility: hidden;
+  text-transform: uppercase;
+}
+.game-block.is-flipped {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+/* End Main */
+
+/* Start Reveal Button */
+.reveal {
+  text-align: center;
+  margin: 50px 0;
+}
+.reveal #reveal-btn {
+  color: #FFF;
+  background-color: #000;
+  font-size: 18px;
+  border: 3px solid var(--lightGray);
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 20px;
+  font-family: inherit;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#reveal-btn:hover,
+#reveal-btn.active {
+  background-color: var(--green);
+}
+/* End Reveal Button */
