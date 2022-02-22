@@ -1,5 +1,5 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 
 * {
   padding: 0;
@@ -9,7 +9,7 @@
 
 body {
   min-height: 100vh;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 :root {
   --green: #6aaa64;
@@ -33,11 +33,6 @@ body {
   text-align: center;
   border-top: 1px solid var(--lightGray);
   border-bottom: 0;
-}
-@media (max-width: 767px) {
-  .footer {
-    font-size: 16px;
-  }
 }
 /* End Header & Footer */
 
@@ -68,11 +63,19 @@ body {
   position: relative;
   width: 150px;
   height: 150px;
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
-  cursor: pointer;
   border: 3px solid var(--lightGray);
   margin: 20px;
+  cursor: pointer;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -ms-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+  transition: transform 0.5s;
 }
 .game-block .front {
   font-size: 15px;
@@ -81,13 +84,17 @@ body {
 .game-block .back {
   font-size: 55px;
   background-color: var(--green);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 .game-block .face {
   position: absolute;
   width: 100%;
   height: 100%;
-  color: #FFF;
+  color: #fff;
   text-align: center;
   line-height: 144px;
   backface-visibility: hidden;
@@ -96,6 +103,8 @@ body {
 .game-block.is-flipped {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 /* End Main */
@@ -106,15 +115,15 @@ body {
   margin: 50px 0;
 }
 .reveal #reveal-btn {
-  color: #FFF;
-  background-color: #000;
+  color: #fff;
+  background-color: #222;
   font-size: 18px;
   border: 3px solid var(--lightGray);
   border-radius: 5px;
-  outline: none;
   padding: 10px 20px;
-  font-family: inherit;
   letter-spacing: 2px;
+  outline: none;
+  font-family: inherit;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -123,3 +132,13 @@ body {
   background-color: var(--green);
 }
 /* End Reveal Button */
+
+/* For Small Screens */
+@media (max-width: 767px) {
+  .content {
+    font-size: 18px;
+  }
+  .footer {
+    font-size: 16px;
+  }
+}
